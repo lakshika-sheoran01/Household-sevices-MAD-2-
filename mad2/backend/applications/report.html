@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .container {
+            background: beige;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        header {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Hi {{ username }}! This is Your Monthly Report</h1>
+        </header>
+
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Service Title</th>
+                        <th>Request Type</th>
+                        <th>Status</th>
+                        <th>Created At</th>
+                        <th>Closed At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in data %}
+                    <tr>
+                        <td>{{ order[0] }}</td>
+                        <td>{{ order[1] }}</td>
+                        <td>{{ order[2] }}</td>
+                        <td>{{ order[3] }}</td>
+                        <td>{{ order[4] }}</td>
+                        <td>{{ order[5] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+
+    </div>
+</body>
+
+</html>
